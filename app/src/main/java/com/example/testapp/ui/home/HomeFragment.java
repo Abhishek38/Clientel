@@ -43,32 +43,33 @@ public class HomeFragment extends Fragment implements RecyclerClick {
         RecyclerView recyclerView = view.findViewById(R.id.RecyclerView_Cosmetics);
         RecyclerAdapter madapter = new RecyclerAdapter(dataList, this);
         RecyclerView.LayoutManager mlayoutmanager=new LinearLayoutManager(getActivity(),LinearLayoutManager.HORIZONTAL,false);
+       recyclerView.setLayoutManager(mlayoutmanager);
         recyclerView.setAdapter(madapter);
         Log.d("DebugAbhi","Adapter has been set");
 
 
     }
     private void PrepareData(){
-        recycler_model data=new recycler_model(
-                "\"https://static2.srcdn.com/wordpress/wp-content/uploads/2017/01/Vegeta-in-Dragon-Ball-over-9000.jpg?q=50&fit=crop&w=740&h=370",
+        recycler_model data=new recycler_model("https://i.redd.it/o3d32byv1z461.jpg",
                 "500",
-                "15%");
+                "15%",
+                "Complete Peach and Lily");
         dataList.add(data);
-        data=new recycler_model("https://static2.srcdn.com/wordpress/wp-content/uploads/2017/03/0.GohanKamehameha.jpg?q=50&fit=crop&w=740&h=370","230","10%");
+        data=new recycler_model("https://i.redd.it/tku58uvhas461.jpg","230","10%"," AB shelfie");
         dataList.add(data);
-        data=new recycler_model("https://www.istockphoto.com/photo/beauty-swatches-gm1135739022-302245781","450","20%");
+        data=new recycler_model("https://preview.redd.it/ug9q49o38z461.jpg?width=828&format=pjpg&auto=webp&s=fb0afa810a3acf44bb7e79716abc49699b17cdef","450","20%","Vitamin C");
         dataList.add(data);
-        data=new recycler_model("https://www.istockphoto.com/photo/beauty-products-gm1150934901-311741936","750","10%");
+        data=new recycler_model("https://preview.redd.it/x4dp4c05sq461.jpg?width=3024&format=pjpg&auto=webp&s=109fcbff4f581eeb08034c7a689b51b43fc3a2e2","750","10%","Korean skincare");
         dataList.add(data);
-        data=new recycler_model("https://www.istockphoto.com/photo/cosmetics-background-gm499889783-42884162","102","7%");
+        data=new recycler_model("https://preview.redd.it/03jmnu7iqn461.jpg?width=2999&format=pjpg&auto=webp&s=211ab73c650b97184727e95acbf59866d9dfa9c4","102","7%","cleansers");
         dataList.add(data);
-        data=new recycler_model("https://www.istockphoto.com/photo/pressed-powder-gm177847164-24328759","690","20%");
+        data=new recycler_model("https://i.redd.it/iahhckcgan461.jpg","690","20%","propolis synergy toner!");
         dataList.add(data);
-        data=new recycler_model("https://www.istockphoto.com/photo/pressed-powder-gm904720876-249490498","7850","26%");
+        data=new recycler_model("https://preview.redd.it/j5jhywv29p461.jpg?width=719&format=pjpg&auto=webp&s=b6cb54a51648d0e00a43be4dab0b31fc182f6545","7850","26%","Dr. Ceuracle Vegan Tea Kombucha Essence");
         dataList.add(data);
-        data=new recycler_model("https://www.istockphoto.com/photo/pressed-powder-gm904721004-249490497","5600","25%");
+        data=new recycler_model("https://preview.redd.it/49ujsi7e47461.jpg?width=3024&format=pjpg&auto=webp&s=fcd9d2ad503eb1abe0c4a4aaad0f7284331f4eec","5600","25%"," Neogen Probiotics Relief cream");
         dataList.add(data);
-        data=new recycler_model("https://www.istockphoto.com/photo/pressed-powder-gm177748016-24148005","2601","50%");
+        data=new recycler_model("https://i.redd.it/q9ejqmqx73461.jpg","2601","50%","Tony Moly Wonder Ceramide Toner");
         dataList.add(data);
 
 

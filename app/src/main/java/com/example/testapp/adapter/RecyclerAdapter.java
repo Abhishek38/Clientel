@@ -36,13 +36,15 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.myView
         private final ImageView proImage;
         private final TextView priceText;
         private final TextView Discount;
+        private final TextView mName;
         public myViewHolder(@NonNull View itemView) {
             super(itemView);
             Log.d("DebugAbhi","executing viewholder");
 
-            proImage=(ImageView)itemView.findViewById(R.id.Cosmetics_Images);
-            priceText=(TextView)itemView.findViewById(R.id.cosmetics_pricing);
-            Discount=(TextView)itemView.findViewById(R.id.cosmetics_discount);
+            proImage=itemView.findViewById(R.id.Cosmetics_Images);
+            priceText=itemView.findViewById(R.id.cosmetics_pricing);
+            Discount=itemView.findViewById(R.id.cosmetics_discount);
+            mName=itemView.findViewById(R.id.cosmetic_name);
 
 
         }
@@ -59,16 +61,11 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.myView
                     .asBitmap()
                     .load(data.getImgLink())
                     .into(proImage);
-            Log.d("DebugAbhi",data.getImgLink().toString());
+            Log.d("DebugAbhi",data.getImgLink());
             priceText.setText(data.getPrice());
             Discount.setText(data.getDiscount());
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    itemclicked.itemClick(data,getAbsoluteAdapterPosition());
-
-                }
-            });
+            mName.setText(data.getName());
+            itemView.setOnClickListener(v -> itemclicked.itemClick(data,getAbsoluteAdapterPosition()));
 
         }
     }
