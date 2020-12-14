@@ -17,14 +17,13 @@ import com.example.testapp.R;
 import com.example.testapp.RecyclerClick;
 import com.example.testapp.model.recycler_model;
 
-import java.util.ArrayList;
 import java.util.List;
 
-public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.myViewHolder> {
+public class Cos_RecyclerAdapter extends RecyclerView.Adapter<Cos_RecyclerAdapter.myViewHolder> {
     private List<recycler_model> items;
     private final RecyclerClick click;
 
-    public RecyclerAdapter(List<recycler_model> items, RecyclerClick click) {
+    public Cos_RecyclerAdapter(List<recycler_model> items, RecyclerClick click) {
         this.items = items;
         this.click = click;
 
@@ -33,18 +32,19 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.myView
 
 
     public static class myViewHolder extends RecyclerView.ViewHolder{
-        private final ImageView proImage;
-        private final TextView priceText;
-        private final TextView Discount;
-        private final TextView mName;
+        private final ImageView cos_proImage;
+        private final TextView cos_priceText;
+        private final TextView cos_Discount;
+        private final TextView cos_mName;
         public myViewHolder(@NonNull View itemView) {
             super(itemView);
             Log.d("DebugAbhi","executing viewholder");
 
-            proImage=itemView.findViewById(R.id.Cosmetics_Images);
-            priceText=itemView.findViewById(R.id.cosmetics_pricing);
-            Discount=itemView.findViewById(R.id.cosmetics_discount);
-            mName=itemView.findViewById(R.id.cosmetic_name);
+            cos_proImage=itemView.findViewById(R.id.Cosmetics_Images);
+            cos_priceText=itemView.findViewById(R.id.cosmetics_pricing);
+            cos_Discount=itemView.findViewById(R.id.cosmetics_discount);
+            cos_mName=itemView.findViewById(R.id.cosmetic_name);
+            /*===================================================================*/
 
 
         }
@@ -60,11 +60,11 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.myView
                     .applyDefaultRequestOptions(options)
                     .asBitmap()
                     .load(data.getImgLink())
-                    .into(proImage);
+                    .into(cos_proImage);
             Log.d("DebugAbhi",data.getImgLink());
-            priceText.setText(data.getPrice());
-            Discount.setText(data.getDiscount());
-            mName.setText(data.getName());
+            cos_priceText.setText(data.getPrice());
+            cos_Discount.setText(data.getDiscount());
+            cos_mName.setText(data.getName());
             itemView.setOnClickListener(v -> itemclicked.itemClick(data,getAbsoluteAdapterPosition()));
 
         }
