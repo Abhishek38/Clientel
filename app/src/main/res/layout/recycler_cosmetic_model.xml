@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="200dp"
+    android:id="@+id/cosmetics_cardView"
+    android:layout_width="175dp"
     android:layout_height="200dp"
+    android:layout_marginRight="3dp"
+    android:background="#fffaaa"
     android:padding="10dp"
-    android:id="@+id/cosmetics_cardView">
+    app:cardCornerRadius="15dp"
+    app:cardPreventCornerOverlap="true">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -16,6 +19,7 @@
             android:id="@+id/Cosmetics_Images"
             android:layout_width="150dp"
             android:layout_height="100dp"
+            android:layout_marginTop="16dp"
             android:background="@color/black"
             android:scaleType="center"
             android:src="@drawable/ic_launcher_foreground"
@@ -30,7 +34,7 @@
             android:layout_marginTop="16dp"
             android:fontFamily="sans-serif"
             android:text="Name of the Product"
-            android:textSize="20sp"
+            android:textSize="15sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.089"
@@ -38,35 +42,68 @@
             app:layout_constraintTop_toBottomOf="@+id/Cosmetics_Images" />
 
         <TextView
-            android:id="@+id/cosmetics_pricing"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:text="Price:15,000"
-            android:textSize="20sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.048"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cosmetic_name" />
-
-        <TextView
             android:id="@+id/cosmetics_discount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
+            android:layout_marginBottom="5dp"
             android:gravity="end"
             android:text="15% off"
             android:textColor="#EA1031"
-            android:textSize="20sp"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.946"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/DiscountId"
+            app:layout_constraintTop_toTopOf="@+id/cosmetic_name"
+            app:layout_constraintVertical_bias="0.923" />
+
+        <TextView
+            android:id="@+id/PriceID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginBottom="5dp"
+            android:text="@string/price"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/cosmetics_pricing"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cosmetic_name" />
+            app:layout_constraintTop_toTopOf="@+id/cosmetic_name"
+            app:layout_constraintVertical_bias="0.923" />
+
+        <TextView
+            android:id="@+id/cosmetics_pricing"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:text="pri"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/PriceID"
+            app:layout_constraintTop_toTopOf="@+id/cosmetic_name"
+            app:layout_constraintVertical_bias="0.923" />
+
+        <TextView
+            android:id="@+id/DiscountId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginBottom="5dp"
+            android:text="@string/discount"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/cosmetics_discount"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toEndOf="@+id/cosmetics_pricing"
+            app:layout_constraintTop_toTopOf="@+id/cosmetic_name"
+            app:layout_constraintVertical_bias="0.923" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
 
 
 </androidx.cardview.widget.CardView>
